@@ -37,7 +37,7 @@ def parse_response(response):
     response = response.split(';')
     fields = {}
     for index, name in RESPONSE_FIELDS.items():
-        fields[name] = response[index]
+        fields[name] = response[index].replace('*', '')
     return fields
 
 def safe_unicode_to_str(string):
